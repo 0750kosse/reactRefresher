@@ -11,7 +11,9 @@ class AddData extends Component {
 
   submitHandler = (e) => {
     e.preventDefault();
-    console.log(this.state)
+
+    this.props.addData(this.state);
+
 
   }
 

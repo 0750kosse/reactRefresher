@@ -12,6 +12,14 @@ class App extends Component {
     ]
   }
 
+  addData = (data) => {
+    data.id = Math.random().toFixed(2)
+    const newData = [...this.state.ninjas, data]
+    this.setState({
+      ninjas: newData
+    })
+  }
+
   render() {
     return (
       <div className="App" >
@@ -20,7 +28,7 @@ class App extends Component {
         <Ninjas
           ninjas={this.state.ninjas}
         />
-        <AddData />
+        <AddData addData={this.addData} />
       </div>
     );
   }
