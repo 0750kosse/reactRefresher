@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Ninjas from './Ninjas';
 
-
 class App extends Component {
-
   state = {
     ninjas: [
       { id: 1, name: "Ryu", age: "20", belt: "red" },
