@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Ninjas from './Ninjas';
+import AddData from './AddData'
 
 class App extends Component {
   state = {
@@ -11,17 +12,6 @@ class App extends Component {
     ]
   }
 
-  handleChange = (e) => {
-    this.setState({
-      name: e.target.value
-    })
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("form submitted", this.state)
-  }
-
   render() {
     return (
       <div className="App" >
@@ -30,6 +20,7 @@ class App extends Component {
         <Ninjas
           ninjas={this.state.ninjas}
         />
+        <AddData />
       </div>
     );
   }
