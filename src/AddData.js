@@ -9,11 +9,14 @@ class AddData extends Component {
 
   }
 
+  clearField = (e) => {
+    document.getElementById('reset').reset();
+  }
+
   submitHandler = (e) => {
     e.preventDefault();
-
+    this.clearField();
     this.props.addData(this.state);
-
 
   }
 
@@ -27,7 +30,7 @@ class AddData extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.submitHandler}>
+        <form id="reset" onSubmit={this.submitHandler}>
           <label htmlFor="name">Name</label>
           <input type="text" id="name" onChange={this.changeHandler}></input>
 

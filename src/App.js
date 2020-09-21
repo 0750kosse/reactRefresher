@@ -20,6 +20,15 @@ class App extends Component {
     })
   }
 
+  dltNinja = (id) => {
+    const updatedList = this.state.ninjas.filter(ninja => {
+      return ninja.id !== id
+    })
+    this.setState({
+      ninjas: updatedList
+    })
+  }
+
   render() {
     return (
       <div className="App" >
@@ -27,6 +36,7 @@ class App extends Component {
         <p>Welcome</p>
         <Ninjas
           ninjas={this.state.ninjas}
+          dlt={this.dltNinja}
         />
         <AddData addData={this.addData} />
       </div>
